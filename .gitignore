@@ -1,0 +1,4 @@
+jar_test.txt
+.vscode
+logs/*
+webapp/WEB-INF/classes/*
