@@ -6,8 +6,11 @@
         <property name="mappings">
             <props>
                 <prop key="/index">indexController</prop>
+                <prop key="/hello">helloController</prop>
             </props>
+            
         </property>
     </bean>
     <bean id="indexController" class="com.lxj.controller.IndexController"></bean>
+    <bean id="helloController" class="com.lxj.controller.HelloController"></bean>
 </beans>
