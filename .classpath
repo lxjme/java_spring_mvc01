@@ -20,7 +20,8 @@
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/mysql-connector-java-5.0.8-bin.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/ognl-3.0.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/servlet-api.jar"/>
-	<classpathentry kind="lib" path="webapp/WEB-INF/lib/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/slf4j-api-1.7.26.jar"/>
+	<classpathentry kind="lib" path="webapp/WEB-INF/lib/slf4j-nop-1.7.26.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/spring-aop-3.2.0.M1.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/spring-asm-3.2.0.M1.jar"/>
 	<classpathentry kind="lib" path="webapp/WEB-INF/lib/spring-aspects-3.2.0.M1.jar"/>
