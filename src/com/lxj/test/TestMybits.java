@@ -21,7 +21,50 @@ public class TestMybits {
         InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession session=sqlSessionFactory.openSession();
+        // 列表
+        // listAll(session);
+        // 添加
+        // addCategory(session);
+        // listAll(session);
+        // 修改
+        // Category c = session.selectOne("getCategory", 2);
+        // c.setC_name("分类名称002-修改");
+        // session.update("updateCategory", c);
+        // System.out.println(c.getC_name());
+        listAll(session);
+        // 根据名称模糊查询
+        listCategoryByName(session);
 
+        session.commit();
+        session.close();
+
+    }
+    
+    private static void listCategoryByName(SqlSession session) {
+        System.out.println("========模糊查询=======");
+        System.out.println("==================================");
+        List<Category> cs = session.selectList("listCategoryByName", "01");
+        for (Category c : cs) {
+            System.out.println(c.getC_name());
+        }
+        System.out.println("==================================");
+    }
+
+    /**
+     * 添加
+     * @param session
+     */
+    private static void addCategory(SqlSession session) {
+        Category c = new Category();
+        c.setC_name("分类名称002");
+        session.insert("addCategory", c);
+    }
+
+    /**
+     * 列表
+     * @param session
+     */
+    private static void listAll(SqlSession session) {
         List<Category> cs = session.selectList("listCategory");
         System.out.println(8888);
         System.out.println(cs.size());
@@ -29,4 +72,5 @@ public class TestMybits {
             System.out.println(c.getC_name());
         }
     }
+
 }
