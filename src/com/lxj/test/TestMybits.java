@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+import com.lxj.mapper.CategoryMapper;
 import com.lxj.pojo.Category;
 
 import org.apache.ibatis.io.Resources;
@@ -21,6 +22,13 @@ public class TestMybits {
         InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession session=sqlSessionFactory.openSession();
+
+        // 注解使用
+        CategoryMapper mapper = session.getMapper(CategoryMapper.class);
+        List<Category> cs =  mapper.listAll();
+        for (Category c : cs) {
+            System.out.println(c.getC_name());
+        }
         // 列表
         // listAll(session);
         // 添加
@@ -31,9 +39,9 @@ public class TestMybits {
         // c.setC_name("分类名称002-修改");
         // session.update("updateCategory", c);
         // System.out.println(c.getC_name());
-        listAll(session);
+        // listAll(session);
         // 根据名称模糊查询
-        listCategoryByName(session);
+        // listCategoryByName(session);
 
         session.commit();
         session.close();

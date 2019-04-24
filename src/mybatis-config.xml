@@ -19,5 +19,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     </environments>
     <mappers>
         <mapper resource="com/lxj/xml/category.xml"/>
+        <mapper class="com.lxj.mapper.CategoryMapper" />
     </mappers>
 </configuration>
